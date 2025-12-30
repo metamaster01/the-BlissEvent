@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,26 +28,26 @@ const Navbar = () => {
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
-            <div className="relative w-32 md:w-58 lg:w-64 h-10 md:h-14 lg:h-16">
+            <Link href="/" className="relative w-32 md:w-58 lg:w-64 h-10 md:h-14 lg:h-16">
               <Image
-                src="/logo-2.png"
-                alt="The Bliss Events"
-                fill
-                className="object-contain"
-                priority
+              src="/logo-2.png"
+              alt="The Bliss Events"
+              fill
+              className="object-contain"
+              priority
               />
-            </div>
+            </Link>
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex items-center gap-8 xl:gap-12">
               <a 
-                href="#home" 
+                href="/" 
                 className="text-white hover:text-[#F5D5B0] transition-colors font-medium text-base"
               >
                 Home
               </a>
               <a 
-                href="#about" 
+                href="/about" 
                 className="text-white hover:text-[#F5D5B0] transition-colors font-medium text-base"
               >
                 About
@@ -58,7 +59,7 @@ const Navbar = () => {
                 Services
               </a>
               <a 
-                href="#contact" 
+                href="/contact" 
                 className="text-white hover:text-[#F5D5B0] transition-colors font-medium text-base"
               >
                 Contact

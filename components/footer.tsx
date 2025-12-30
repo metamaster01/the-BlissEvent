@@ -230,16 +230,71 @@ const Footer = () => {
     setMounted(true);
   }, []);
 
+  // useEffect(() => {
+  //   if (!mounted) return;
+
+  //   const initAnimations = async () => {
+  //     try {
+  //       const { gsap } = await import("gsap");
+  //       const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+
+  //       gsap.registerPlugin(ScrollTrigger);
+
+  //       gsap.from(".footer-logo", {
+  //         y: 30,
+  //         opacity: 0,
+  //         duration: 0.8,
+  //         ease: "power3.out",
+  //         scrollTrigger: {
+  //           trigger: footerRef.current,
+  //           start: "top 90%",
+  //         },
+  //       });
+
+  //       gsap.from(".footer-section", {
+  //         y: 40,
+  //         opacity: 0,
+  //         duration: 0.8,
+  //         stagger: 0.15,
+  //         ease: "power3.out",
+  //         scrollTrigger: {
+  //           trigger: footerRef.current,
+  //           start: "top 85%",
+  //         },
+  //       });
+
+  //       gsap.from(".social-icon", {
+  //         scale: 0,
+  //         opacity: 0,
+  //         duration: 0.5,
+  //         stagger: 0.1,
+  //         ease: "back.out(1.7)",
+  //         scrollTrigger: {
+  //           trigger: ".social-icons-container",
+  //           start: "top 90%",
+  //         },
+  //       });
+  //     } catch (e) {
+  //       console.log("GSAP not available");
+  //     }
+  //   };
+
+  //   initAnimations();
+  // }, [mounted]);
+
+
   useEffect(() => {
-    if (!mounted) return;
+  if (!mounted) return;
 
-    const initAnimations = async () => {
-      try {
-        const { gsap } = await import("gsap");
-        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+  const initAnimations = async () => {
+    try {
+      const { gsap } = await import("gsap");
+      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
 
-        gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger);
 
+      // Scope everything to this footer (prevents cross-page selection issues)
+      const ctx = gsap.context(() => {
         gsap.from(".footer-logo", {
           y: 30,
           opacity: 0,
@@ -263,24 +318,47 @@ const Footer = () => {
           },
         });
 
-        gsap.from(".social-icon", {
-          scale: 0,
-          opacity: 0,
-          duration: 0.5,
-          stagger: 0.1,
-          ease: "back.out(1.7)",
-          scrollTrigger: {
-            trigger: ".social-icons-container",
-            start: "top 90%",
-          },
-        });
-      } catch (e) {
-        console.log("GSAP not available");
-      }
-    };
+        // ✅ Animate icons per container (mobile + desktop independently)
+        const containers = gsap.utils.toArray<HTMLElement>(".social-icons-container");
 
-    initAnimations();
-  }, [mounted]);
+        containers.forEach((container) => {
+          const icons = container.querySelectorAll(".social-icon");
+
+          gsap.from(icons, {
+            scale: 0,
+            opacity: 0,
+            duration: 0.5,
+            stagger: 0.1,
+            ease: "back.out(1.7)",
+            immediateRender: false, // ✅ prevents “stuck hidden” behavior
+            scrollTrigger: {
+              trigger: container, // ✅ correct trigger for that set of icons
+              start: "top 92%",
+            },
+          });
+        });
+
+      }, footerRef);
+
+      // ensure triggers measure correct positions after layout
+      ScrollTrigger.refresh();
+
+      return () => ctx.revert();
+    } catch (e) {
+      console.log("GSAP not available");
+    }
+  };
+
+  const cleanupPromise = initAnimations();
+
+  return () => {
+    // if initAnimations returned cleanup, run it
+    if (cleanupPromise && typeof (cleanupPromise as any) === "function") {
+      (cleanupPromise as any)();
+    }
+  };
+}, [mounted]);
+
 
   if (!mounted) return null;
 
@@ -375,7 +453,7 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#home"
+                    href="/"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
                     Home
@@ -383,7 +461,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#about"
+                    href="/about"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
                     About us
@@ -397,17 +475,17 @@ const Footer = () => {
                     Gallery
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="#blog"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
                     Blog
                   </a>
-                </li>
+                </li> */}
                 <li>
                   <a
-                    href="#contact"
+                    href="/contact"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
                     Contact
@@ -521,7 +599,7 @@ const Footer = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-white/80 text-sm">Nagpur</span>
+                <span className="text-white/80 text-sm">Nagpur, MH</span>
               </li>
             </ul>
           </div>
@@ -611,7 +689,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#home"
+                  href="/home"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
                   Home
@@ -619,7 +697,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#about"
+                  href="/about"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
                   About us
@@ -633,17 +711,17 @@ const Footer = () => {
                   Gallery
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#blog"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
                   Blog
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a
-                  href="#contact"
+                  href="/contact"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
                   Contact
@@ -758,7 +836,7 @@ const Footer = () => {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                <span className="text-white/80 text-sm">Nagpur</span>
+                <span className="text-white/80 text-sm">Nagpur, MH</span>
               </li>
             </ul>
           </div>
@@ -776,20 +854,20 @@ const Footer = () => {
                 href="#terms"
                 className="text-white/70 hover:text-white transition-colors duration-300"
               >
-                Terms
+                Terms & Condition
               </a>
               <a
                 href="#privacy"
                 className="text-white/70 hover:text-white transition-colors duration-300"
               >
-                Privacy
+                Privacy Policy
               </a>
-              <a
+              {/* <a
                 href="#cookies"
                 className="text-white/70 hover:text-white transition-colors duration-300"
               >
                 Cookies
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

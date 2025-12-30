@@ -197,6 +197,7 @@ const GallerySection = ({
   return (
     <section
       ref={sectionRef}
+      id='gallery'
       className="relative overflow-hidden bg-[#fbf5e9] py-14 sm:py-16"
     >
       {/* Decorative glows */}
