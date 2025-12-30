@@ -499,34 +499,34 @@ const Footer = () => {
               <ul className="space-y-3">
                 <li>
                   <a
-                    href="#pricing"
+                    href="/services"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
-                    Pricing
+                    Weedings Celeberation
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#offers"
+                    href="/services"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
-                    Offer
+                    Corporate Events
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#booking"
+                    href="/services"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
-                    Booking
+                    Social Events
                   </a>
                 </li>
                 <li>
                   <a
-                    href="#success"
+                    href="/services"
                     className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300 text-sm"
                   >
-                    Our success
+                    Event Decor
                   </a>
                 </li>
               </ul>
@@ -736,34 +736,34 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#pricing"
+                  href="/services"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
-                  Pricing
+                  Wedding Celebration
                 </a>
               </li>
               <li>
                 <a
-                  href="#offers"
+                  href="/services"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
-                  Offer
+                  Corporate Events
                 </a>
               </li>
               <li>
                 <a
-                  href="#booking"
+                  href="/services"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
-                  Booking
+                  Social Events
                 </a>
               </li>
               <li>
                 <a
-                  href="#success"
+                  href="/services"
                   className="text-white/80 hover:text-white hover:translate-x-1 inline-block transition-all duration-300"
                 >
-                  Our success
+                  Event Decor
                 </a>
               </li>
             </ul>
