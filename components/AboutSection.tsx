@@ -226,6 +226,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const AboutSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -423,6 +424,7 @@ const AboutSection = () => {
 
             {/* Read More Button */}
             <div className="pt-4 about-text-item">
+              <Link href="/about">
               <button className="group relative inline-flex items-center gap-2 text-[#8B1A1A] font-semibold text-base md:text-lg hover:text-[#A83838] transition-colors duration-300">
                 <span>Read More</span>
                 <svg 
@@ -435,6 +437,7 @@ const AboutSection = () => {
                 </svg>
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#8B1A1A] group-hover:w-full transition-all duration-300" />
               </button>
+              </Link>
             </div>
           </div>
 

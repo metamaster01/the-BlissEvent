@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { MessageCircle } from "lucide-react";
+import EnquiryDialog from "./services/EnquiryDialog";
 
 type PlanCtaSectionProps = {
   bgSrc?: string;
@@ -23,11 +24,18 @@ export default function PlanCtaSection({
   subtitle = "Whether it’s a wedding, corporate event, or private celebration, The Bliss Events is here to make it extraordinary.",
   primaryLabel = "Get a Quote",
   secondaryLabel = "Chat on WhatsApp",
-  onPrimaryClick,
-  onSecondaryClick,
+  
+  
 }: PlanCtaSectionProps) {
   const ref = useRef<HTMLElement | null>(null);
+  const [open, setOpen] = useState(false);
+  const [selectedEventType, setSelectedEventType] = useState("");
   const inView = useInView(ref, { once: true, margin: "-15% 0px -15% 0px" });
+
+   const onEnquiry = (eventType: string) => {
+    setSelectedEventType(eventType);
+    setOpen(true);
+  };
 
   return (
     <section ref={ref as any} className="bg-[#fbf5e9]">
@@ -88,7 +96,7 @@ export default function PlanCtaSection({
                   className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row"
                 >
                   <button
-                    onClick={onPrimaryClick}
+                    onClick={() => onEnquiry("wedding")}
                     className="
                       inline-flex h-11 items-center justify-center rounded-full
                       bg-white px-10 text-sm font-semibold text-[#7d1511]
@@ -102,7 +110,11 @@ export default function PlanCtaSection({
                   </button>
 
                   <button
-                    onClick={onSecondaryClick}
+                    onClick={() => {
+                  const phoneNumber = '917021927602';
+                  const message = encodeURIComponent('Hi, I want to get an inquiry regarding an event. I found your website and would like to know more about your services for weddings, functions, birthdays, and parties.');
+                  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+                }}
                     className="
                       inline-flex h-11 items-center justify-center gap-2 rounded-full
                       border border-white/45 bg-white/0 px-9 text-sm font-semibold text-white
@@ -139,6 +151,9 @@ export default function PlanCtaSection({
           <div className="h-20 sm:h-28 lg:h-36" />
         </div>
       </div>
+
+
+      <EnquiryDialog open={open} onClose={() => setOpen(false)} eventType={selectedEventType} />
     </section>
   );
 }

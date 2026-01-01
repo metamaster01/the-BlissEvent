@@ -668,6 +668,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Lottie from "lottie-react";
 import confettiAnimation from "../public/Confetti.json";
+import EnquiryDialog from "./services/EnquiryDialog";
 
 const HeroScrollSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -677,6 +678,8 @@ const HeroScrollSection = () => {
   const [mounted, setMounted] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
   const confettiShownRef = useRef(false);
+  const [open, setOpen] = useState(false);
+  const [selectedEventType, setSelectedEventType] = useState("");
 
   useEffect(() => {
     setMounted(true);
@@ -851,6 +854,11 @@ const HeroScrollSection = () => {
 
   if (!mounted) return null;
 
+  const onEnquiry = (eventType: string) => {
+    setSelectedEventType(eventType);
+    setOpen(true);
+  };
+
   return (
     <div
       ref={containerRef}
@@ -1024,10 +1032,18 @@ const HeroScrollSection = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start second-section-text">
-                  <button className="bg-[#A83838] text-white px-8 py-4 rounded-full hover:bg-[#8B2E2E] transition-all duration-300 hover:shadow-xl hover:scale-105 font-semibold text-lg">
+                  <button onClick={() => onEnquiry("wedding")} className="bg-[#A83838] text-white px-8 py-4 rounded-full hover:bg-[#8B2E2E] transition-all duration-300 hover:shadow-xl hover:scale-105 font-semibold text-lg">
+
                     Get a Quote
                   </button>
-                  <button className="border-2 border-[#A83838] text-[#A83838] px-8 py-4 rounded-full hover:bg-[#A83838] hover:text-white transition-all duration-300 hover:shadow-xl font-semibold text-lg">
+
+                  <button
+                   onClick={() => {
+                  const phoneNumber = '917021927602';
+                  const message = encodeURIComponent('Hi, I want to get an inquiry regarding an event. I found your website and would like to know more about your services for weddings, functions, birthdays, and parties.');
+                  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+                }}
+                   className="border-2 border-[#A83838] text-[#A83838] px-8 py-4 rounded-full hover:bg-[#A83838] hover:text-white transition-all duration-300 hover:shadow-xl font-semibold text-lg">
                     Chat on WhatsApp
                   </button>
                 </div>
@@ -1041,12 +1057,13 @@ const HeroScrollSection = () => {
         @keyframes spin {
           from {
             transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
+            }
+            to {
+              transform: rotate(360deg);
+              }
+            }
       `}</style>
+            <EnquiryDialog open={open} onClose={() => setOpen(false)} eventType={selectedEventType} />
     </div>
   );
 };

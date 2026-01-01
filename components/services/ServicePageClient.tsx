@@ -65,7 +65,7 @@ export default function ServicesPageClient() {
           transition={{ duration: 0.85, ease, delay: 0.14 }}
           className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
-          <button className="h-10 rounded-full bg-[#8B2E2E] px-6 text-sm font-medium text-white hover:bg-[#7D1F1F] transition">
+          <button onClick={() => onEnquiry("wedding")} className="h-10 rounded-full bg-[#8B2E2E] px-6 text-sm font-medium text-white hover:bg-[#7D1F1F] transition">
             Get a Quote
           </button>
           <button className="h-10 rounded-full border border-[#8B2E2E]/30 bg-white/0 px-6 text-sm font-medium text-[#8B2E2E] hover:bg-white/30 transition">

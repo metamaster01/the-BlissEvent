@@ -271,7 +271,7 @@ const GallerySection = ({
         </div>
 
         {/* CTA */}
-        <div className="mt-7 flex justify-center">
+        {/* <div className="mt-7 flex justify-center">
           <button
             ref={ctaRef}
             onClick={onCtaClick}
@@ -282,7 +282,7 @@ const GallerySection = ({
               <ArrowRight className="h-4 w-4" />
             </span>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

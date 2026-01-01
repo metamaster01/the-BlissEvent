@@ -59,14 +59,27 @@ const Navbar = () => {
                 Services
               </a>
               <a 
+                href="/blogs" 
+                className="text-white hover:text-[#F5D5B0] transition-colors font-medium text-base"
+              >
+                Blogs
+              </a>
+              <a 
                 href="/contact" 
                 className="text-white hover:text-[#F5D5B0] transition-colors font-medium text-base"
               >
                 Contact
               </a>
-              <button className="border-2 border-white text-white px-6 py-2.5 rounded-full hover:bg-white hover:text-[#7D1F1F] transition-all duration-300 font-medium text-base">
+                <button 
+                onClick={() => {
+                  const phoneNumber = '917021927602';
+                  const message = encodeURIComponent('Hi, I want to get an inquiry regarding an event. I found your website and would like to know more about your services for weddings, functions, birthdays, and parties.');
+                  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+                }}
+                className="border-2 border-white text-white px-6 py-2.5 rounded-full hover:bg-white hover:text-[#7D1F1F] transition-all duration-300 font-medium text-base"
+                >
                 Chat on WhatsApp
-              </button>
+                </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -92,35 +105,47 @@ const Navbar = () => {
       >
         <div className="flex flex-col items-center justify-center h-full gap-8 px-6">
           <a 
-            href="#home" 
+            href="/" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-2xl font-medium hover:text-[#F5D5B0] transition-colors"
           >
             Home
           </a>
           <a 
-            href="#about" 
+            href="/about" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-2xl font-medium hover:text-[#F5D5B0] transition-colors"
           >
             About
           </a>
           <a 
-            href="#services" 
+            href="/services" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-2xl font-medium hover:text-[#F5D5B0] transition-colors"
           >
             Services
           </a>
           <a 
-            href="#contact" 
+            href="/blogs" 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-white text-2xl font-medium hover:text-[#F5D5B0] transition-colors"
+          >
+            Blogs
+          </a>
+          <a 
+            href="/contact" 
             onClick={() => setIsMobileMenuOpen(false)}
             className="text-white text-2xl font-medium hover:text-[#F5D5B0] transition-colors"
           >
             Contact
           </a>
           <button 
-            onClick={() => setIsMobileMenuOpen(false)}
+            onClick={() => {
+              const phoneNumber = '917021927602';
+              const message = encodeURIComponent('Hi, I want to get an inquiry regarding an event. I found your website and would like to know more about your services for weddings, functions, birthdays, and parties.');
+              window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+              setIsMobileMenuOpen(false);
+            }}
             className="border-2 border-white text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#7D1F1F] transition-all duration-300 font-medium text-lg mt-4"
           >
             Chat on WhatsApp

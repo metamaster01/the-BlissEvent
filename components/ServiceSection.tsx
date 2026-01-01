@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Service {
   id: number;
@@ -211,9 +212,11 @@ const ServicesSection = () => {
 
       {/* View All Services Button */}
       <div className="container mx-auto px-6 md:px-12 lg:px-20 mt-12 md:mt-16">
+        <Link href="/services" className="flex justify-center">
         <button className="view-services-btn bg-[#D4AF37] hover:bg-[#C19B2A] text-white px-8 py-4 rounded-full font-semibold text-base md:text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
           View all services
         </button>
+        </Link>
       </div>
     </section>
   );

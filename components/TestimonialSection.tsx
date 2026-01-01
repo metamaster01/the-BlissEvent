@@ -51,6 +51,7 @@ export default function TestimonialsSection({
           quote:
             "The Bliss Events transformed our vision into reality. Their creativity and attention to detail were impressive. Our guests were amazed, and we received countless compliments.",
           name: "Karan & Priya",
+          featured: true,
         },
         {
           quote:
