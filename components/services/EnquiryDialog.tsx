@@ -50,7 +50,7 @@ export default function EnquiryDialog({ open, onClose, eventType }: Props) {
     setSubmitStatus("idle");
 
     try {
-      const { error } = await supabase.from("contact-bliss").insert([formData]);
+      const { error } = await supabase.from("contact").insert([formData]);
       if (error) throw error;
 
       setSubmitStatus("success");

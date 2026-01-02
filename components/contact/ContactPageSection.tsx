@@ -52,7 +52,7 @@ export default function ContactPageSection() {
     setSubmitStatus("idle");
 
     try {
-      const { error } = await supabase.from("contact-bliss").insert([formData]);
+      const { error } = await supabase.from("contact").insert([formData]);
       if (error) throw error;
 
       setSubmitStatus("success");

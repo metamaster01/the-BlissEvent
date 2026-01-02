@@ -103,7 +103,7 @@ const ContactFormSection = () => {
 
     try {
       const { error } = await supabase
-        .from('contact-bliss')
+        .from('contact')
         .insert([formData]);
 
       if (error) throw error;
