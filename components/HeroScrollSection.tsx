@@ -869,17 +869,17 @@ const HeroScrollSection = () => {
         ref={firstSectionRef}
         className="absolute inset-0 bg-gradient-to-br from-[#A83838] via-[#8B2E2E] to-[#7D1F1F]"
       >
-        <div className="relative h-full w-full px-4 md:px-8 lg:px-16 xl:px-20 pt-24 md:pt-28 pb-48 md:pb-56 lg:pb-64">
+        <div className="relative h-full w-full px-4 md:px-8 lg:px-16 xl:px-20 pt-12 md:pt-28 pb-4 md:pb-56 lg:pb-64">
           {/* Main Title - Centered */}
-          <div className="absolute top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center hero-title w-full px-4">
+          <div className="absolute top-1/2 sm:top-1/2 md:top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center hero-title w-full px-4">
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-white leading-tight font-normal italic"
+              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-white leading-tight font-normal italic"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
               Khushiyaan Aapki,
             </h1>
             <h1
-              className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-white leading-tight font-normal italic mt-2"
+              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-white leading-tight font-normal italic mt-2"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
               Jimmedari Humari
@@ -888,7 +888,7 @@ const HeroScrollSection = () => {
 
           {/* Top Right Image */}
           <div className="absolute top-24 md:top-28 lg:top-28 right-4 md:right-8 lg:right-16 xl:right-24 hero-image-1 z-10">
-            <div className="relative w-64 h-48 md:w-56 md:h-56 lg:w-72 lg:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#F5D5B0] transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="relative w-48 h-40 md:w-56 md:h-56 lg:w-72 lg:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#F5D5B0] transform -rotate-3 hover:rotate-0 transition-transform duration-500">
               <Image
                 src="/hero-scroll1.png"
                 alt="Wedding celebration"
@@ -900,8 +900,8 @@ const HeroScrollSection = () => {
           </div>
 
           {/* Bottom Left Image */}
-          <div className="absolute bottom-32 md:bottom-40 lg:bottom-48 left-4 md:left-12 lg:left-18 xl:left-20 hero-image-2 z-10">
-            <div className="relative w-56 h-56 md:w-64 md:h-64 lg:w-72 lg:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#F5D5B0] transform rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div className="absolute bottom-24 md:bottom-40 lg:bottom-48 left-4 md:left-12 lg:left-18 xl:left-20 hero-image-2 z-10">
+            <div className="relative w-48 h-40 md:w-64 md:h-64 lg:w-72 lg:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#F5D5B0] transform rotate-2 hover:rotate-0 transition-transform duration-500">
               <Image
                 src="/hero-scroll2.png"
                 alt="Wedding preparation"
