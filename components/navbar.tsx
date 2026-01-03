@@ -28,7 +28,7 @@ const Navbar = () => {
         <div className="container mx-auto px-6 md:px-12 lg:px-20">
           <div className="flex items-center justify-between h-20 md:h-24">
             {/* Logo */}
-            <Link href="/" className="relative w-32 md:w-58 lg:w-64 h-10 md:h-14 lg:h-16">
+            <Link href="/" className="relative w-40 md:w-58 lg:w-64 h-14 md:h-14 lg:h-16">
               <Image
               src="/logo-2.png"
               alt="The Bliss Events"
