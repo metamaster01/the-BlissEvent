@@ -40,7 +40,7 @@ export default function AboutHeroSection() {
           <div className="relative aspect-[16/9] w-full md:aspect-[21/9]">
             <Image
               src="/about/about-1.png"
-              alt="About Bliss Event"
+              alt="About The Bliss Events"
               fill
               priority
               className="object-cover"

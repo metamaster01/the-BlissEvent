@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Bliss Event - Your destination for unforgettable experiences",
-  description: "Join us at The Bliss Event for a memorable celebration tailored to your needs.",
+  title: "The Bliss Events - Your destination for unforgettable experiences",
+  description: "Join us at The Bliss Events for a memorable celebration tailored to your needs.",
   keywords: [
-    "Bliss Event",
+    "The Bliss Events",
     "Marriage Events",
     "Birthday Parties",
     "Corporate Events",

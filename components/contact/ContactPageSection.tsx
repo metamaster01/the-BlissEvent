@@ -79,7 +79,7 @@ export default function ContactPageSection() {
           transition={{ duration: 0.9, ease }}
           className="text-center font-serif text-5xl font-semibold text-[#8B2E2E] sm:text-6xl"
         >
-          Contact Bliss Event
+          Contact The Bliss Events
         </motion.h1>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-12">

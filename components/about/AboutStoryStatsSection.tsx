@@ -70,12 +70,12 @@ export default function AboutStoryStatsSection() {
               transition={{ duration: 0.85, ease, delay: 0.08 }}
               className="mt-6 max-w-2xl text-sm leading-relaxed text-[#241a16]/70"
             >
-              At Bliss Event, we believe every event should be more than just well-planned—it should feel magical.
+              At The Bliss Events, we believe every event should be more than just well-planned—it should feel magical.
               From intimate gatherings to grand celebrations, we turn your ideas into unforgettable experiences with
               creativity, precision, and heart.
               <br />
               <br />
-              Founded with a passion for meaningful moments, Bliss Event was created to take the stress out of planning
+              Founded with a passion for meaningful moments, The Bliss Events was created to take the stress out of planning
               and replace it with excitement, confidence, and joy. We handle every detail so you can truly live in the
               moment.
             </motion.p>
