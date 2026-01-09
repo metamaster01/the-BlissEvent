@@ -19,7 +19,7 @@ export default function AboutHeroSection() {
           transition={{ duration: 0.9, ease }}
           className="text-center font-serif text-5xl font-semibold tracking-tight text-[#8B2E2E] sm:text-6xl"
         >
-          About Bliss event
+          About The Bliss Events
         </motion.h1>
 
         <motion.p
