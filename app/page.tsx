@@ -10,18 +10,22 @@ import TestimonialsSection from '@/components/TestimonialSection';
 import PlanCtaSection from '@/components/CTASection';
 import ContactFormSection from '@/components/ContactSection';
 import Footer from '@/components/footer';
+import FAQSection from '@/components/FaqSection';
+import WorkStepsSection from '@/components/WorksSection';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden">
       <Navbar />
       <HeroScrollSection />
       <AboutSection />
       <ServicesSection />
       <WhyChooseSection />
+      <WorkStepsSection />
       <GallerySection />
       <WhyUsSection />
       <TestimonialsSection />
+      <FAQSection />
       <PlanCtaSection />
       <ContactFormSection />
       <Footer />

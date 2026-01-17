@@ -29,3 +29,61 @@ body {
   scroll-behavior: smooth;
 } */
 
+
+
+.nav-link {
+  position: relative;
+  font-size: 17px;
+  font-weight: 500;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #f5d5b0;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f5d5b0;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+.nav-item {
+  color: white;
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #F5D5B0;
+}
+
+/* Mega Menu */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  background: white;
+  border-top: 5px solid #F5D5B0;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  z-index: 40;
+  widht: 100%;
+  justify-content: center;
+  allign-items: center;
+  items-self: center; 
+}

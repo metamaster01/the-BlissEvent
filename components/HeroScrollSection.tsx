@@ -865,13 +865,59 @@ const HeroScrollSection = () => {
       className="relative w-full h-screen overflow-hidden"
     >
       {/* FIRST SECTION - RED BACKGROUND */}
+      {/* <div
+        ref={firstSectionRef}
+        className="absolute inset-0 bg-gradient-to-br from-[#A83838] via-[#8B2E2E] to-[#7D1F1F]"
+      >
+        <div className="relative h-full w-full px-4 md:px-8 lg:px-16 xl:px-20 pt-12 md:pt-28 pb-4 md:pb-56 lg:pb-64">
+        
+          <div className="absolute top-1/2 sm:top-1/2 md:top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center hero-title w-full px-4">
+            <h1
+              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-white leading-tight font-normal italic"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Khushiyaan Aapki,
+            </h1>
+            <h1
+              className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-white leading-tight font-normal italic mt-2"
+              style={{ fontFamily: "Playfair Display, serif" }}
+            >
+              Jimmedari Humari
+            </h1>
+          </div>
+
+        
+          <div className="absolute top-24 md:top-28 lg:top-28 right-4 md:right-8 lg:right-16 xl:right-24 hero-image-1 z-10">
+            <div className="relative w-48 h-40 md:w-56 md:h-56 lg:w-72 lg:h-56 rounded-2xl overflow-hidden shadow-2xl border-4 border-[#F5D5B0] transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+              <Image
+                src="/hero-scroll1.png"
+                alt="Wedding celebration"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div> */}
+
+      {/* FIRST SECTION - RED BACKGROUND */}
       <div
         ref={firstSectionRef}
         className="absolute inset-0 bg-gradient-to-br from-[#A83838] via-[#8B2E2E] to-[#7D1F1F]"
       >
         <div className="relative h-full w-full px-4 md:px-8 lg:px-16 xl:px-20 pt-12 md:pt-28 pb-4 md:pb-56 lg:pb-64">
+          {/* Background Logo Behind Title */}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] sm:w-[80%] md:w-[70%] lg:w-[60%] xl:w-[50%] aspect-square pointer-events-none z-0">
+            <Image
+              src="/bg-hero.svg"
+              alt="Background decoration"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+
           {/* Main Title - Centered */}
-          <div className="absolute top-1/2 sm:top-1/2 md:top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center hero-title w-full px-4">
+          <div className="absolute top-1/2 sm:top-1/2 md:top-2/5 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center hero-title w-full px-4 z-10">
             <h1
               className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-8xl text-white leading-tight font-normal italic"
               style={{ fontFamily: "Playfair Display, serif" }}
@@ -898,6 +944,8 @@ const HeroScrollSection = () => {
               />
             </div>
           </div>
+
+          {/* Rest of the code remains the same... */}
 
           {/* Bottom Left Image */}
           <div className="absolute bottom-24 md:bottom-40 lg:bottom-48 left-4 md:left-12 lg:left-18 xl:left-20 hero-image-2 z-10">
@@ -985,14 +1033,14 @@ const HeroScrollSection = () => {
                 </div>
 
                 <div className="relative z-10 w-full max-w-sm md:max-w-md lg:max-w-lg">
-                    <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                        <Image
-                            src="/hero-1.png"
-                            alt="Wedding ceremony"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
+                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src="/hero-1.png"
+                      alt="Wedding ceremony"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
 
                 <div
@@ -1032,18 +1080,26 @@ const HeroScrollSection = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start second-section-text">
-                  <button onClick={() => onEnquiry("wedding")} className="bg-[#A83838] text-white px-8 py-4 rounded-full hover:bg-[#8B2E2E] transition-all duration-300 hover:shadow-xl hover:scale-105 font-semibold text-lg">
-
+                  <button
+                    onClick={() => onEnquiry("wedding")}
+                    className="bg-[#A83838] text-white px-8 py-4 rounded-full hover:bg-[#8B2E2E] transition-all duration-300 hover:shadow-xl hover:scale-105 font-semibold text-lg"
+                  >
                     Get a Quote
                   </button>
 
                   <button
-                   onClick={() => {
-                  const phoneNumber = '917021927602';
-                  const message = encodeURIComponent('Hi, I want to get an inquiry regarding an event. I found your website and would like to know more about your services for weddings, functions, birthdays, and parties.');
-                  window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
-                }}
-                   className="border-2 border-[#A83838] text-[#A83838] px-8 py-4 rounded-full hover:bg-[#A83838] hover:text-white transition-all duration-300 hover:shadow-xl font-semibold text-lg">
+                    onClick={() => {
+                      const phoneNumber = "917021927602";
+                      const message = encodeURIComponent(
+                        "Hi, I want to get an inquiry regarding an event. I found your website and would like to know more about your services for weddings, functions, birthdays, and parties."
+                      );
+                      window.open(
+                        `https://wa.me/${phoneNumber}?text=${message}`,
+                        "_blank"
+                      );
+                    }}
+                    className="border-2 border-[#A83838] text-[#A83838] px-8 py-4 rounded-full hover:bg-[#A83838] hover:text-white transition-all duration-300 hover:shadow-xl font-semibold text-lg"
+                  >
                     Chat on WhatsApp
                   </button>
                 </div>
@@ -1057,13 +1113,17 @@ const HeroScrollSection = () => {
         @keyframes spin {
           from {
             transform: rotate(0deg);
-            }
-            to {
-              transform: rotate(360deg);
-              }
-            }
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
       `}</style>
-            <EnquiryDialog open={open} onClose={() => setOpen(false)} eventType={selectedEventType} />
+      <EnquiryDialog
+        open={open}
+        onClose={() => setOpen(false)}
+        eventType={selectedEventType}
+      />
     </div>
   );
 };

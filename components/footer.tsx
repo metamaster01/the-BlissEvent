@@ -611,10 +611,10 @@ const Footer = () => {
           <div className="footer-logo">
             <div className="mb-6">
               <Image
-                src="/logo-2.png"
+                src="/logo-image-2.png"
                 alt="The Bliss Events"
-                width={230}
-                height={140}
+                width={200}
+                height={120}
                 className="object-contain"
               />
             </div>
