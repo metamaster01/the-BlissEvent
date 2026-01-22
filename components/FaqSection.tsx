@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
+import Link from 'next/link';
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -167,6 +168,7 @@ export default function FAQSection() {
           }}>
             Still have questions?
           </p>
+          <Link href="/contact" passHref>
           <button style={{
             backgroundColor: '#1f2937',
             color: 'white',
@@ -191,6 +193,7 @@ export default function FAQSection() {
           }}>
             Contact Us Today
           </button>
+          </Link>
         </div>
       </div>
     </div>

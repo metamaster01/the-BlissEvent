@@ -478,15 +478,15 @@ import {
 } from 'lucide-react';
 
 const servicesList = [
-  { title: 'Wedding Planning', desc: 'End-to-end planning to ensure a smooth, stress-free wedding experience.', slug: 'wedding-planning', icon: CalendarHeart },
-  { title: 'Destination Weddings', desc: 'Seamless planning and execution for beautiful weddings at breathtaking locations.', slug: 'destination-weddings', icon: MapPin },
-  { title: 'Stage & Mandap Decor', desc: 'Elegant stage and mandap designs that reflect tradition and style.', slug: 'stage-mandap-decor', icon: Tent },
-  { title: 'Theme-Based Décor', desc: 'Personalized décor concepts crafted around your unique wedding theme.', slug: 'theme-decor', icon: Palette },
+  // { title: 'Wedding Planning', desc: 'End-to-end planning to ensure a smooth, stress-free wedding experience.', slug: 'wedding-planning', icon: CalendarHeart },
+  { title: 'Destination Weddings', desc: 'Seamless planning and execution for beautiful weddings at breathtaking locations.', slug: 'destination-wedding', icon: MapPin },
+  { title: 'Resorts & Hotel Booking', desc: 'Seamless accommodation solutions for your events and celebrations.', slug: 'resorts-hotel-booking', icon: Tent },
+  { title: 'Event Decoration', desc: 'Personalized décor concepts crafted around your unique wedding theme.', slug: 'event-decoration', icon: Palette },
   // { title: 'Floral Decoration', desc: 'Fresh, premium floral arrangements to enhance every wedding space.', slug: 'floral-decoration', icon: Flower2 },
-  { title: 'Guest Hospitality', desc: 'Warm hospitality and smooth coordination for guests.', slug: 'guest-management', icon: Users },
-  { title: 'Venue Styling', desc: 'Grand entryways and beautifully styled venues.', slug: 'venue-styling', icon: DoorOpen },
-  { title: 'Sound & Light Setup', desc: 'High-quality sound, lighting, and LED ambience.', slug: 'sound-light', icon: Music },
   { title: 'Photography', desc: 'Capturing timeless moments professionally.', slug: 'photography', icon: Camera },
+  { title: 'Sangeet n Entertainment', desc: 'Live performances, DJ services, choreography, and complete entertainment production.', slug: 'sangeet-entertainment', icon: DoorOpen },
+  { title: 'Guests Management', desc: 'Complete hospitality management ensuring comfort and seamless experience for all guests.', slug: 'guests-management', icon: Users },
+  // { title: 'Sound & Light Setup', desc: 'High-quality sound, lighting, and LED ambience.', slug: 'sound-light', icon: Music },
 ];
 
 export default function Navbar() {
@@ -533,8 +533,8 @@ export default function Navbar() {
 
                 {/* FULL WIDTH MEGA MENU */}
                 <div className="mega-menu opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 translate-y-3 group-hover:translate-y-0">
-                  <div className="max-w-[1600px] mx-auto px-16  py-6">
-                    <div className="grid grid-cols-4 gap-x-8 gap-y-6">
+                  <div className="max-w-[1600px] mx-auto px-16  py-4">
+                    <div className="grid grid-cols-3 gap-x-8 gap-y-4">
                       {servicesList.map((s) => (
                         <Link
                           key={s.slug}
