@@ -516,8 +516,25 @@ export default function Navbar() {
 
             {/* LOGO */}
             <Link href="/" className="relative w-84 h-26 shrink-0">
-              <Image src="/logo-image-2.png" alt="The Bliss Events" fill className="object-contain object-left" />
+              <Image 
+                src="/logo-compress.webp" 
+                alt="The Bliss Events" 
+                fill 
+                className="object-contain object-left animate-logo" 
+                unoptimized 
+              />
             </Link>
+
+            <style jsx>{`
+              @keyframes fadeInOut {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+              }
+              
+              .animate-logo {
+                animation: fadeInOut 10s infinite linear;
+              }
+            `}</style>
 
             {/* DESKTOP MENU */}
             <div className="hidden lg:flex items-center gap-14">
