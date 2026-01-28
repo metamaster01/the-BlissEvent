@@ -125,7 +125,7 @@ export default function ContactPageSection() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-[#8B2E2E] focus:ring-2 focus:ring-[#8B2E2E]/20"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+91 98765 43210"
                   />
                 </Field>
 
@@ -207,10 +207,10 @@ export default function ContactPageSection() {
             </p>
 
             <div className="mt-7 grid gap-5 sm:grid-cols-2">
-              <InfoCard icon={<Mail className="h-5 w-5" />} title="Email" value="hi@agency.com" sub="Our friendly team is here to help." />
-              <InfoCard icon={<Phone className="h-5 w-5" />} title="Phone" value="+1 (555) 000-0000" sub="Mon–sat from 8am to 5pm." />
-              <InfoCard icon={<MapPin className="h-5 w-5" />} title="Location" value="Noida, India" sub="Come say hello at our place." />
-              <InfoCard icon={<Clock className="h-5 w-5" />} title="Working hours" value="Sunday: By Appointment Only" sub="Mon–sat from 8am to 5pm." />
+              <InfoCard icon={<Mail className="h-5 w-5" />} title="Email" value="Theblissevents1985@gmail.com" sub="Our friendly team is here to help." />
+              <InfoCard icon={<Phone className="h-5 w-5" />} title="Phone" value="+91 7021927602" sub="Mon–sat from 8am to 5pm." />
+              <InfoCard icon={<MapPin className="h-5 w-5" />} title="Location" value="Nagpur, MH India" sub="Come say hello at our place." />
+              <InfoCard icon={<Clock className="h-5 w-5" />} title="Working hours" value="Mon–sat from 8am to 5pm." sub="Sunday : Appointment Only." />
             </div>
           </motion.div>
         </div>
